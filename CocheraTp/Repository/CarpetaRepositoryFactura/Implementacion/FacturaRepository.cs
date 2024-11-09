@@ -64,7 +64,7 @@ namespace CocheraTp.Repository.CarpetaRepositoryFactura.Implementacion
         {
             bool result = true;
             SqlTransaction t = null;
-            string query = "SP_INSERTAR_FACTUR";
+            string query = "SP_INSERTAR_FACTURA";
 
             try
             {
