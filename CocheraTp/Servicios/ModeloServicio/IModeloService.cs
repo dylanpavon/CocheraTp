@@ -13,5 +13,6 @@ namespace CocheraTp.Servicios.ModeloServicio
         Task<List<MODELO>> GetAllModelos();
         Task<List<MODELO>> GetAllByMarca(int idMarca);
         Task<int> GetMaxIDModelo();
+        Task<MODELO?> GetModeloByID(int id);
     }
 }

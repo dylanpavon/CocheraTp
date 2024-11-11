@@ -34,7 +34,10 @@ namespace CocheraTp.Repository.CarpetaRepositoryModelo.Implementacion
             max_id = await _context.MODELOs.MaxAsync(m => (int?)m.id_modelo) ?? 0;
             return max_id;
         }
-
+        public async Task<MODELO?> GetModeloByID(int id)
+        {
+            return await _context.MODELOs.FindAsync(id);
+        }
         public async Task<bool> GuardarModelo(MODELO modelo)
         {
             await _context.MODELOs.AddAsync(modelo);

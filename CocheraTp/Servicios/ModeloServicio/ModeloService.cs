@@ -25,6 +25,10 @@ namespace CocheraTp.Servicios.ModeloServicio
         {
             return await _unitOfWork.ModeloRepository.GetAllModelos();
         }
+        public async Task<MODELO?> GetModeloByID(int id)
+        {
+            return await _unitOfWork.ModeloRepository.GetModeloByID(id);
+        }
         public async Task<int> GetMaxIDModelo()
         {
             return await _unitOfWork.ModeloRepository.GetMaxIDModelo();

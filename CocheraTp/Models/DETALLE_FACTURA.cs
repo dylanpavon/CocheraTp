@@ -18,7 +18,6 @@ public partial class DETALLE_FACTURA
     public int? id_vehiculo { get; set; }
     [Required(ErrorMessage = "Es necesario indicar el lugar ocupado.")]
     public string id_lugar { get; set; }
-    [Required(ErrorMessage = "Es necesario indicar el tipo de abono.")]
     public int? id_abono { get; set; }
     public decimal? precio { get; set; }
 

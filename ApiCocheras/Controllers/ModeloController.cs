@@ -57,7 +57,34 @@ namespace ApiCocheras.Controllers
             return await _modeloService.GetMaxIDModelo();
         }
 
+        [HttpGet("modelo/{id}")]
+        public async Task<ActionResult<MODELO>> GetModeloByID(int id)
+        {
+            try
+            {
 
+
+                var modelos = await _modeloService.GetAllModelos();
+
+                var idExiste = modelos.Any(e => e.id_modelo == id);
+                if (!idExiste)
+                {
+                    return Ok("Id Modelo no existe");
+                }
+
+                var modelo = await _modeloService.GetModeloByID(id);
+                if (modelo != null)
+                {
+                    return Ok(modelo);
+                }
+                return Ok(new { });
+            }
+            catch (Exception)
+            {
+
+                return BadRequest();
+            }
+        }
         [HttpPost]
         public async Task<IActionResult> GuardarModelo([FromBody] MODELO modelo)
         {
