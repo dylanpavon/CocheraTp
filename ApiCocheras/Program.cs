@@ -16,6 +16,7 @@ using CocheraTp.Repository.CarpetaRepositoryFactura.UnitOfWorkFactura;
 using CocheraTp.Repository.CarpetaRepositoryFormaPago.Implementacion;
 using CocheraTp.Repository.CarpetaRepositoryFormaPago.Interfaces;
 using CocheraTp.Repository.CarpetaRepositoryFormaPago.UnitOfWorkFormaPago;
+using CocheraTp.Repository.CarpetaRepositoryLugar.Implementacion;
 using CocheraTp.Repository.CarpetaRepositoryLugar.Interfaces;
 using CocheraTp.Repository.CarpetaRepositoryLugar.UnitofWorkLugar;
 using CocheraTp.Repository.CarpetaRepositoryMarca.Implementacion;

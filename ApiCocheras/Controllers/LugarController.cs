@@ -58,7 +58,7 @@ namespace ApiLugares.Controllers
 
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> ActualizarSección(string id, [FromBody]int tipoVehiculo, [FromBody] bool ingreso)
+        public async Task<IActionResult> ActualizarSección(string id, int tipoVehiculo, bool ingreso)
         {
             try
             {

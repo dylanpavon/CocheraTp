@@ -13,6 +13,6 @@ namespace CocheraTp.Repository.CarpetaRepositoryRemito.Interfaces
         Task<int> GetMaxIDRemito();
         Task <bool> AddRemito(REMITO remito);
         Task<List<REMITO>> GetAllRemito();
-        Task<bool> DeleteRemito(int id)
+        Task<bool> DeleteRemito(int id);
     }
 }
