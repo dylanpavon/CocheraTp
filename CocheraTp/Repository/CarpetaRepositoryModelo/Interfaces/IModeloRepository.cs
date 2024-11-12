@@ -13,5 +13,6 @@ namespace CocheraTp.Repository.CarpetaRepositoryModelo.Interfaces
         Task<List<MODELO>> GetAllModelos();
         Task<List<MODELO>> GetAllByMarca(int idMarca);
         Task<int> GetMaxIDModelo();
+        Task<MODELO> GetModeloByID(int id);
     }
 }

@@ -18,7 +18,10 @@ public partial class DETALLE_FACTURA
     public DateTime? fecha_salida { get; set; }
 
     public string id_lugar { get; set; }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0bb8a76f45f422507a410a38f1142fa894a4f29d
     public int? id_abono { get; set; }
 
     public decimal? precio { get; set; }
