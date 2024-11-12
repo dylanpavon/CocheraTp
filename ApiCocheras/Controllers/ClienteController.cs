@@ -143,7 +143,7 @@ namespace ApiFactura.Controllers
                    !string.IsNullOrEmpty(cliente.apellido) &&
                    !string.IsNullOrEmpty(cliente.nro_documento) &&
                    !string.IsNullOrEmpty(cliente.telefono) &&
-                   !string.IsNullOrEmpty(cliente.e_mail);
+                   !string.IsNullOrEmpty(cliente.email);
         }
     }
 }

@@ -44,6 +44,11 @@ namespace CocheraTp.Servicios.FacturaServicio
             return await _unitOfWork.FacturaRepository.GetAll();
         }
 
+        public async Task<FACTURA?> GetByDocumento(string dni)
+        {
+            return await _unitOfWork.FacturaRepository.GetByDocumento(dni);
+        }
+
         public async Task<FACTURA?> GetFacturaById(int id)
         {
             return await _unitOfWork.FacturaRepository.GetById(id);

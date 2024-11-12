@@ -15,5 +15,6 @@ namespace CocheraTp.Servicios.FacturaServicio
         Task<bool?> CreateFactura(FACTURA? factura);
         Task<bool> UpdateFactura(int id, FACTURA facturaAct);
         Task<bool> DeleteFactura(int id);
+        Task<FACTURA?> GetByDocumento(string dni);
     }
 }

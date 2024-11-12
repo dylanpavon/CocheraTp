@@ -37,5 +37,17 @@ namespace CocheraTp.Repository.CarpetaRepositoryRemito.Implementacion
             max_id = await _context.REMITOs.MaxAsync(r => (int?)r.id_remito) ?? 0;
             return max_id;
         }
+
+        public async Task<bool> DeleteRemito(int id)
+        {
+            var remito = await _context.REMITOs.FindAsync(id);
+            if (remito != null)
+            {
+                _context.REMITOs.Remove(remito);
+                await _context.SaveChangesAsync();
+                return true;
+            }
+            return false;
+        }
     }
 }

@@ -48,7 +48,7 @@ namespace CocheraTp.Repository.CarpetaRepositoryCliente.Implemetacion
                     nro_documento = c.nro_documento,
                     direccion = c.direccion,
                     telefono = c.telefono,
-                    e_mail = c.e_mail,
+                    e_mail = c.email,
                     Iva = c.id_iva_condicionNavigation.descripcion
 
                 }).ToListAsync();
@@ -57,12 +57,12 @@ namespace CocheraTp.Repository.CarpetaRepositoryCliente.Implemetacion
         {
             return await _context.CLIENTEs.FirstOrDefaultAsync(c => c.nro_documento == nroDoc);
         }
-        public async Task<CLIENTE> GetClienteById(int id)
+        public async Task<CLIENTE?> GetClienteById(int id)
         {
             return await _context.CLIENTEs.FindAsync(id);
         }
 
-        public async Task<ClienteDtoOut> GetClienteByIdDto(int id)
+        public async Task<ClienteDtoOut?> GetClienteByIdDto(int id)
         {
             return await _context.CLIENTEs
                 .Where(c => c.id_cliente == id)
@@ -75,7 +75,7 @@ namespace CocheraTp.Repository.CarpetaRepositoryCliente.Implemetacion
                     nro_documento = c.nro_documento,
                     direccion = c.direccion,
                     telefono = c.telefono,
-                    e_mail = c.e_mail,
+                    e_mail = c.email,
                     Iva = c.id_iva_condicionNavigation.descripcion
                 }).FirstOrDefaultAsync();
 

@@ -5,11 +5,13 @@ using System.Collections.Generic;
 
 namespace CocheraTp.Models;
 
-public partial class TIPO_FACTURA
+public partial class TIPOS_VEHICULO
 {
-    public int id_tipo_factura { get; set; }
+    public int id_tipo_vehiculo { get; set; }
 
     public string descripcion { get; set; }
 
-    public virtual ICollection<FACTURA> FACTURAs { get; set; } = new List<FACTURA>();
+    public decimal? precio { get; set; }
+
+    public virtual ICollection<VEHICULO> VEHICULOs { get; set; } = new List<VEHICULO>();
 }

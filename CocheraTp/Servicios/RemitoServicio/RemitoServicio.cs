@@ -43,6 +43,18 @@ namespace CocheraTp.Servicios.RemitoServicio
         {
             return await _unitOfWorkRemito.RepostoryRemito.GetMaxIDRemito();
         }
+
+        public async Task<bool> DeleteRemito(int id)
+        {
+            var eliminado = await _unitOfWorkRemito.RepostoryRemito.DeleteRemito(id);
+            if (eliminado)
+            {
+                await _unitOfWorkRemito.SaveChangesAsync();
+                return true;
+            }
+            return false;
+        }
+
     }
 
 }

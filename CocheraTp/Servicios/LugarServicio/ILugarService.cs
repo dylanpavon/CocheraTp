@@ -11,6 +11,6 @@ namespace CocheraTp.Servicios.LugarServicio
     {
         Task<List<LUGARE>> GetAllLugares();
         Task<List<LUGARE>> GetLugaresDisponibles();
-        Task<bool> UpdateLugar(string id);
+        Task<bool> ActualizarSecciones(string idLugar, int idVehiculo, bool ingreso);
     }
 }

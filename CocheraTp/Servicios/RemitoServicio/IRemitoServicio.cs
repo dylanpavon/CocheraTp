@@ -13,5 +13,6 @@ namespace CocheraTp.Servicios.RemitoServicio
         Task<bool> AddRemito(REMITO remito);
         Task<List<REMITO>> GetAllRemito();
         Task<int> GetMaxIDRemito();
+        Task<bool> DeleteRemito(int id);
     }
 }

@@ -41,6 +41,14 @@ namespace CocheraTp.Repository.CarpetaRepositoryFactura.Implementacion
             return facturas;
         }
 
+        public async Task<FACTURA?> GetByDocumento(string dni)
+        {
+            return await _context.FACTURAs
+                         .Include(f => f.id_clienteNavigation)
+                         .Where(f => f.id_clienteNavigation.nro_documento == dni)
+                         .FirstOrDefaultAsync();
+        }
+
         public async Task<FACTURA?> GetById(int id)
         {
             var f = await _context.FACTURAs.Include(f => f.DETALLE_FACTURAs)

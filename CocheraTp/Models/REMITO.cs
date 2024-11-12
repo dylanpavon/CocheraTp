@@ -14,4 +14,8 @@ public partial class REMITO
     public string id_lugar { get; set; }
 
     public DateTime? fecha_entrada { get; set; }
+
+    public virtual LUGARE id_lugarNavigation { get; set; }
+
+    public virtual VEHICULO id_vehiculoNavigation { get; set; }
 }

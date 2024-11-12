@@ -21,7 +21,7 @@ public partial class CLIENTE
 
     public string telefono { get; set; }
 
-    public string e_mail { get; set; }
+    public string email { get; set; }
 
     public int? id_iva_condicion { get; set; }
 

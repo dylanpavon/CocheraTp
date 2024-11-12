@@ -28,6 +28,24 @@ namespace ApiFactura.Controllers
             return await _serviceF.GetAllFacturas();
         }
 
+        [HttpGet("by-dni/{dni}")]
+        public async Task<ActionResult<FACTURA>> GetFacturaByDni(string dni)
+        {
+            if (string.IsNullOrEmpty(dni))
+            {
+                return BadRequest("El DNI no puede estar vacío.");
+            }
+
+            var factura = await _serviceF.GetByDocumento(dni);
+
+            if (factura == null)
+            {
+                return NotFound($"No se encontró ninguna factura asociada al DNI {dni}");
+            }
+
+            return Ok(factura);
+        }
+
         [HttpGet("By ID")]
         public async Task<ActionResult<FACTURA?>> GetFacturaByID([FromQuery] int id)
         {

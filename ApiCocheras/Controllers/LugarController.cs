@@ -17,51 +17,61 @@ namespace ApiLugares.Controllers
             _service = iservicio;
         }
 
+
         [HttpGet]
         public async Task<ActionResult<IEnumerable<LUGARE>>> GetAll()
         {
             try
             {
-                return await _service.GetAllLugares();
+                var lugares = await _service.GetAllLugares();
+                if (lugares == null || !lugares.Any())
+                {
+                    return BadRequest();
+                }
+                return Ok(lugares);
             }
             catch (Exception)
             {
-
-                return null;
+                return BadRequest();
             }
         }
+
+
 
         [HttpGet("disponibles")]
         public async Task<ActionResult<IEnumerable<LUGARE>>> GetLugaresDisponibles()
         {
             try
             {
-                return await _service.GetLugaresDisponibles();
+                var lugaresDisponibles = await _service.GetLugaresDisponibles();
+                if (lugaresDisponibles == null || !lugaresDisponibles.Any())
+                {
+                    return BadRequest();
+                }
+                return Ok(lugaresDisponibles);
             }
             catch (Exception)
             {
-
-                return Ok(new List<LUGARE>());
+                return BadRequest();
             }
-
         }
+
+
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateLugarEstado(string id)
+        public async Task<IActionResult> ActualizarSección(string id, [FromBody]int tipoVehiculo, [FromBody] bool ingreso)
         {
             try
             {
-                var actualizado = await _service.UpdateLugar(id);
-
-                if (!actualizado)
+                bool actualizado = await _service.ActualizarSecciones(id, tipoVehiculo, ingreso);
+                if (actualizado)
                 {
-                    return NotFound();
+                    return Ok("Estado del lugar actualizado correctamente.");
                 }
-
-                return Ok("Estado del lugar actualizado con éxito.");
+                return NotFound();
             }
             catch (Exception)
             {
-                return BadRequest(new { message = "Ocurrió un error al actualizar el estado del lugar." });
+                return BadRequest();
             }
         }
     }

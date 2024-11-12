@@ -15,6 +15,7 @@ namespace CocheraTp.Repository.CarpetaRepositoryFactura.Interfaces
         Task<FACTURA?> GetFacturaByPatente(string patente);
         Task<bool?> Create(FACTURA? factura);
         Task<bool> Update(int id, FACTURA DF);
+        Task<FACTURA?> GetByDocumento(string dni);
         Task<bool> DeleteById(int id);
     }
 }

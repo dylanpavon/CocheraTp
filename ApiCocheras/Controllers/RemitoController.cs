@@ -68,5 +68,23 @@ namespace ApiCocheras.Controllers
                 
             }
         }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<bool>> DeleteRemito(int id)
+        {
+            try
+            {
+                var eliminado = await _remitoServicio.DeleteRemito(id);
+                if (eliminado)
+                {
+                    return Ok(true);
+                }
+                return NotFound(false);
+            }
+            catch (Exception)
+            {
+                return BadRequest(false);
+            }
+        }
     }
 }
